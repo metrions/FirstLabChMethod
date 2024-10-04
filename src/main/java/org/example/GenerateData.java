@@ -43,7 +43,7 @@ public class GenerateData {
         return F;
     }
 
-    private double f(double x){
+    public double f(double x){
         return 1.0 / x + 0.1;
     }
     private double f1(double x){

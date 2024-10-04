@@ -46,5 +46,19 @@ public class Main {
             double result2 = Math.abs(splineArray.get(x).get(1) - array.get(x).get(1));
             System.out.println(result1 + " " + result2);
         });
+
+        double[] points = {0.25, 0.5, 1};
+        System.out.println("\nТочки из варианта Через Сплайн");
+        for (int i=0; i<3; i++){
+            var temp = main.cubicSpline.result(new Point(points[i], 0.0));
+            System.out.println(points[i] + " " +temp.get(0));
+        }
+        System.out.println("\nТочки из варианта Через формулы");
+        for (int i=0; i<2; i++){
+            var temp = (main.generateData.f(points[i+1]) - main.generateData.f(points[i])) / (points[i+1] - points[i]);
+            System.out.println(temp);
+        }
+        var temp = (main.generateData.f(points[2]) - main.generateData.f(points[1])) / (points[1] - points[2]);
+        System.out.println(temp);
     }
 }
