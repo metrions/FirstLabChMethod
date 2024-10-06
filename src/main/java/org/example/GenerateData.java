@@ -63,6 +63,7 @@ public class GenerateData {
                 .range(0, (int) ((b - a) / h + 2))
                 .mapToObj(x -> new Point(a + h * x, f(a + h * x)))
                 .collect(Collectors.toCollection(ArrayList::new));
+        points.forEach(x->System.out.println(x.getY()));
         data.forEach(
                 x -> {
                     dataf.add(f(x));
